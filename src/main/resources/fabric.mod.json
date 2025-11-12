@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "no-end-flash",
+  "version": "${version}",
+  "name": "No End Flash",
+  "description": "Simple mod for delete End Flash (purple lightning in any time)",
+  "authors": [
+    "y9lihop"
+  ],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/no-end-flash/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "net.y9.noEndFlash.NoEndFlashClient"
+    ],
+    "main": [
+      "net.y9.noEndFlash.NoEndFlash"
+    ]
+  },
+  "mixins": [
+    "no-end-flash.mixins.json",
+    {
+      "config": "no-end-flash.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
