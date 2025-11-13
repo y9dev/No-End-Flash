@@ -7,14 +7,14 @@ version = project.mod_version
 group = project.maven_group
 
 base {
-    archivesName = project.archives_base_name
+    archivesName = "${archives_base_name}_${minecraft_version}"
 }
 
 loom {
     splitEnvironmentSourceSets()
 
     mods {
-        "no-end-flash" {
+        "noendflash" {
             sourceSet sourceSets.main
             sourceSet sourceSets.client
         }
@@ -33,7 +33,8 @@ repositories {
 dependencies {
     // To change the versions see the gradle.properties file
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings loom.officialMojangMappings()
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"

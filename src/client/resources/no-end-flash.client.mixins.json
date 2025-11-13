@@ -1,11 +1,11 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.y9.noEndFlash.mixin",
+  "package": "net.y9.noendflash.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
-    "LightTextureMixin",
-    "SkyRendererMixin"
+    "ClientWorldMixin",
+    "SoundSystemMixin"
   ],
   "injectors": {
     "defaultRequire": 1
