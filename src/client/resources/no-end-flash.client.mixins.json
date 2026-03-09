@@ -5,7 +5,7 @@
   "compatibilityLevel": "JAVA_21",
   "client": [
     "ClientPlayNetworkHandlerMixin",
-    "ClientWorldMixin",
+    "ClientWorldMixin"
   ],
   "injectors": {
     "defaultRequire": 1
