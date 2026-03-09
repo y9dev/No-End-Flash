@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.13-SNAPSHOT'
+    id 'net.fabricmc.fabric-loom-remap' version '1.15-SNAPSHOT'
     id 'maven-publish'
 }
 
@@ -38,6 +38,9 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    implementation "org.slf4j:slf4j-api:2.0.12"
+    runtimeOnly 'ch.qos.logback:logback-classic:1.5.13'
 }
 
 processResources {
@@ -78,7 +81,7 @@ java {
 
 jar {
     from("LICENSE") {
-        rename { "${it}_${project.archivesBaseName}" }
+        rename { "${it}_${project.archives_base_name}" }
     }
 }
 
