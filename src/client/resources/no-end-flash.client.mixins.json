@@ -4,8 +4,7 @@
   "package": "net.y9.noendflash.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
-    "ClientPlayNetworkHandlerMixin",
-    "ClientWorldMixin"
+    "DimensionTypeMixin"
   ],
   "injectors": {
     "defaultRequire": 1
