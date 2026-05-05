@@ -4,7 +4,7 @@
   "package": "net.y9.noendflash.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
-    "DimensionTypeMixin"
+    "EndFlashStateMixin"
   ],
   "injectors": {
     "defaultRequire": 1
