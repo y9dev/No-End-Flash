@@ -24,10 +24,10 @@ This is a client-side mod and only needs to be installed on the client.
 
 You can toggle End Flashes using the command `/noendflash`.
 
-Available arguments:\
-    1. Raw command - Help information
-    2. status - Current End Flashes status
-    3. toggle - Toggle End Flashes (how obvious, isnt it?)
+Available arguments:
+- Raw command - Help information
+- status - Current End Flashes status
+- toggle - Toggle End Flashes (how obvious, isnt it?)
 
 ## License
 
