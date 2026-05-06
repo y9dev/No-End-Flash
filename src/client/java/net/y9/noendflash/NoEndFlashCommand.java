@@ -2,8 +2,8 @@ package net.y9.noendflash;
 
 import com.mojang.brigadier.context.CommandContext;
 
-import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
+import net.fabricmc.fabric.api.client.command.v2.ClientCommands;
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -12,18 +12,19 @@ import net.minecraft.network.chat.Style;
 public class NoEndFlashCommand {
 
 	protected static void registerCommands() {
-		ClientCommandRegistrationCallback.EVENT.register(((dispatcher, registryAccess) -> {
-			dispatcher.register(ClientCommandManager.literal("noendflash").executes(context -> handleHelp(context))
-					.then(ClientCommandManager.literal("toggle").executes(context -> handleToggle(context)))
-					.then(ClientCommandManager.literal("status").executes(context -> handleStatus(context))));
+		ClientCommandRegistrationCallback.EVENT.register(((dispatcher, _) -> {
+
+			dispatcher.register(ClientCommands.literal("noendflash").executes(context -> handleHelp(context))
+					.then(ClientCommands.literal("toggle").executes(context -> handleToggle(context)))
+					.then(ClientCommands.literal("status").executes(context -> handleStatus(context))));
 		}));
 	}
 
 	private static int handleHelp(CommandContext<FabricClientCommandSource> context) {
 		context.getSource()
 				.sendFeedback(Component.literal("Actual commands:\n")
-						.append(Component.literal("		/status - Displays current status of End Flashes\n"))
-						.append(Component.literal("		/toggle - Toggles current status of End Flashes")));
+						.append(Component.literal("/status - Displays current status of End Flashes\n"))
+						.append(Component.literal("/toggle - Toggles current status of End Flashes")));
 		return 1;
 	}
 
